@@ -1,0 +1,26 @@
+api:
+  dashboard: true
+
+entryPoints:
+  http:
+    address: ":80"
+  https:
+    address: ":443"
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+  file:
+    filename: "./dynamic_conf.yml"
+
+certificatesResolvers:
+  http:
+    acme:
+      email: youremail@yourdomain.com
+      storage: acme.json
+      httpChallenge:
+        entryPoint: http
+
+pilot:
+    token: "34294d63-814a-40b8-bd32-b0e7b8086734"
