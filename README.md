@@ -1,5 +1,5 @@
 # Docker VPS Starter
-## This is a starter project to setup your VPS server to run a Sveltekit app.  It also contains everything you need to run your server. A reverse proxy with ssl creation, a database with an api framework for your sveltekit app, a realtime server monitor and a few analytics packages to choose from. 
+#### This is a starter project to setup your VPS server to run a Sveltekit app.  It also contains everything you need to run your server. A reverse proxy with ssl creation, a database with an api framework for your sveltekit app, a realtime server monitor and a few analytics packages to choose from. 
 
 ## [Traefik](https://traefik.io)
 ### Traefik is a reverse proxy that forwards traffic into your docker containers and keeps your ssl certificates updated.
