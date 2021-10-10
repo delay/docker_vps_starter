@@ -1,0 +1,43 @@
+version: '3'
+services:
+  traefik:
+    image: traefik:v2.4.8
+    container_name: traefik
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - frontend
+      
+    ports:
+      #ports container runs on external_port:internal_port
+      - 80:80
+      - 443:443
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./volume/traefik.yml:/traefik.yml:ro
+      - ./volume/acme.json:/acme.json
+      - ./volume/dynamic_conf.yml:/dynamic_conf.yml
+    labels:
+      # needed to tell traefik about our domains and containers it will manage
+      - "traefik.enable=true"
+      # redirect http traffic to https
+      - "traefik.http.routers.traefik.entrypoints=http"
+      - "traefik.http.routers.traefik.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.middlewares.traefik-auth.basicauth.users=${USER_PASSWORD_PAIR}"
+      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
+      # setup https domain to forward to container
+      - "traefik.http.routers.traefik-secure.entrypoints=https"
+      - "traefik.http.routers.traefik-secure.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.traefik-secure.middlewares=secHeaders@file,traefik-auth"
+      # setup our ssl certificate
+      - "traefik.http.routers.traefik-secure.tls=true"
+      - "traefik.http.routers.traefik-secure.tls.certresolver=http"
+      - "traefik.http.routers.traefik-secure.service=api@internal"
+networks:
+  frontend:
+    external: true #this allows the network to show outside of the container
