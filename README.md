@@ -10,7 +10,8 @@
 
 ## [Netdata](https://www.netdata.cloud)
 ### Netdata is a realtime server monitor.
+1. Copy sample.env to .env file and then update this file with your own settings.
 
 ## [Directus with Postgres Database](https://directus.io)
-### Directus is app & API for your SQL database.
+### Directus creates an app & API for your SQL database.
 1. Copy sample.env to .env file and then update this file with your own settings.

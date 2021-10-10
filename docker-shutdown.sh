@@ -26,4 +26,4 @@ cd sveltekit
 docker-compose down
 cd ..
 echo "stopped sveltekit"
-docker network rm frontend
+docker network rm traefik_network
