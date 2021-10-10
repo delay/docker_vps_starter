@@ -9,7 +9,7 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      - frontend
+      - traefik_network
       
     ports:
       #ports container runs on external_port:internal_port
@@ -39,5 +39,5 @@ services:
       - "traefik.http.routers.traefik-secure.tls.certresolver=http"
       - "traefik.http.routers.traefik-secure.service=api@internal"
 networks:
-  frontend:
+  traefik_network:
     external: true #this allows the network to show outside of the container

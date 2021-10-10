@@ -6,3 +6,5 @@
 3. Copy sample.env to .env file and then update this file with your own settings.
 4. Follow best security practices and don't check in the .env to your git repository.
 5. Follow the directions in the sample.env to change the USER_PASSWORD_PAIR to something secure.
+
+## Directus with Postgres Database
