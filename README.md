@@ -1,6 +1,9 @@
 # Docker VPS Starter
 #### This is a starter project to setup your VPS server to run a Sveltekit app.  It also contains everything you need to run your server. A reverse proxy with ssl creation, a database with an api framework for your sveltekit app, a realtime server monitor and a few analytics packages to choose from. 
 
+1. Follow the steps for each app below to update the settings so it will work on your VPS.
+2. You can use the shell scripts to start and stop all of the containers. `sh docker-startup.sh` and `sh docker-shutdown.sh`.  You may need to give execute permissions to yourself. `chmod 0755 docker-startup.sh` and `chmod 0755 docker-shutdown.sh`. You can comment out any containers you don't want to use.  (You probably only want to use one analytics package.) 
+
 ## [Traefik](https://traefik.io)
 ### Traefik is a reverse proxy that forwards traffic into your docker containers and keeps your ssl certificates updated.
 1. Run this command to put the proper permissions on the acme.json file. `chmod 600 ./traefik/volume/acme.json`
