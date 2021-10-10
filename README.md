@@ -21,4 +21,4 @@
 1. Copy sample.env to .env file and then update this file with your own settings.
 2. If you need run this container manually: `docker-compose up -d --build`.  This is needed so it will run the node server when it sets up the container.
 3. When developing on your desktop from inside the app directory you can `npm run dev -- --open` to start the dev server.
-4.  The sveltekit app is in the app directory.  Edit this to create your app.  You can use the directus app to save and load data for your sveltekit app.
+4.  The sveltekit app is in the sveltekit/app directory.  Edit this directory to create your app.  You can use the directus app to save and load data for your sveltekit app.
