@@ -51,11 +51,11 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.plausible.entrypoints=http"
-      - "traefik.http.routers.plausible.rule=Host(`${URL}`)"
+      - "traefik.http.routers.plausible.rule=Host(`${DOMAIN}`)"
       - "traefik.http.middlewares.plausible-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.plausible.middlewares=plausible-https-redirect"
       - "traefik.http.routers.plausible-secure.entrypoints=https"
-      - "traefik.http.routers.plausible-secure.rule=Host(`${URL}`)"
+      - "traefik.http.routers.plausible-secure.rule=Host(`${DOMAIN}`)"
       - "traefik.http.routers.plausible-secure.tls=true"
       - "traefik.http.routers.plausible-secure.tls.certresolver=http"
       - "traefik.http.routers.plausible-secure.service=plausible"
@@ -66,8 +66,8 @@ services:
       - ADMIN_USER_EMAIL=${ADMIN_USER_EMAIL}
       - ADMIN_USER_NAME=${ADMIN_USER_NAME}
       - ADMIN_USER_PWD=${ADMIN_PASSWORD}
-      - BASE_URL=https://${URL}
-      - HOST=${URL}
+      - BASE_URL=https://${DOMAIN}
+      - HOST=${DOMAIN}
       - SECRET_KEY_BASE=${SECRET_KEY_BASE}
       
 volumes:
