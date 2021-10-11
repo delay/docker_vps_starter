@@ -4,6 +4,7 @@
 1. Follow the steps for each app below to update the settings so it will work on your VPS.
 2. You can use the shell scripts to start and stop all of the containers. `sh docker-startup.sh` and `sh docker-shutdown.sh`.  You may need to give execute permissions to yourself. `chmod 0755 docker-startup.sh` and `chmod 0755 docker-shutdown.sh`. You can comment out any containers you don't want to use.  (You probably only want to use one analytics package.)
 3. I put these particular docker containers together because it is the development platform I prefer.  However you could easily make adjustments to this starter project for the frameworks and apps you wish to use.
+4. I setup my VPS at [Contabo](https://contabo.com/en/).  I have also used Digital Ocean and Vultr in the past and they are both great.  However Contabo gives you a lot more resources for the price, so I went with them.
 
 ## [Traefik](https://traefik.io)
 ### Traefik is a reverse proxy that forwards traffic into your docker containers and keeps your ssl certificates updated.
@@ -39,7 +40,7 @@
  
  ## [66analytics](https://66analytics.com)
 ### Web analytics made easy. Self-hosted, friendly, all-in-one web analytics tool. Lightweight tracking, session replays, heatmaps, user journeys & more.
-1. This is the only container that will not work without purchasing something.  I like this analytics app because it has heatmaps and records user sessions which can help with debugging.  At the time I wrote this, it was $79.  It is similar to analytics like [fullstory](https://www.fullstory.com), [luckyorange](https://www.luckyorange.com) and [hotjar](https://www.hotjar.com) but its self hosted.  If you don't need heatmaps and user session recording, plausible listed above has similar features.
+1. This is the only container that will not work without purchasing something.  I like this analytics app because it has heatmaps and records user sessions which can help with debugging.  At the time I wrote this, it was $79.  It is similar to analytics like [fullstory](https://www.fullstory.com), [luckyorange](https://www.luckyorange.com) and [hotjar](https://www.hotjar.com) but it's self hosted.  If you don't need heatmaps and user session recording, plausible listed above has similar features.
 2. You need to buy the script and place it in the /66analytics/66analytics folder.
 3. Copy sample.env to .env file and then update this file with your own settings.
 
