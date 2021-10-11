@@ -64,7 +64,7 @@ services:
       - "traefik.docker.network=traefik_network"
     environment:
       - ADMIN_USER_EMAIL=${ADMIN_USER_EMAIL}
-      - ADMIN_USER_NAME=${ADMIN_USERNAME}
+      - ADMIN_USER_NAME=${ADMIN_USER_NAME}
       - ADMIN_USER_PWD=${ADMIN_PASSWORD}
       - BASE_URL=https://${URL}
       - HOST=${URL}
