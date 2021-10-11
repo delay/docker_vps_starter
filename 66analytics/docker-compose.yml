@@ -69,6 +69,7 @@ services:
 networks:
   traefik_network:
     name: traefik_network
+    external: true
   internal_network:
     name: internal_network
 
