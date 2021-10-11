@@ -34,7 +34,7 @@
 2. There are some settings for a relay host for the smtp server.  You can remove these if you want to use the local smtp server. You can use a relay service and fill in those fields for a simpler configuration.  There are many third party mail senders (Mailgun, Sendgrid, AWS etc).  
 
 ## [Posthog](https://posthog.com)
-### Open source product analytics PostHog keeps you in control of customer data. Works with your event pipelines and data warehouse. This is for complex analytics analysis.
+### Open source product analytics, PostHog keeps you in control of customer data. Works with your event pipelines and data warehouse. This is for complex analytics analysis.
 1. Copy sample.env to .env file and then update this file with your own settings.
  
  ## [66analytics](https://66analytics.com)
