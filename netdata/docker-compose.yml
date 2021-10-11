@@ -27,7 +27,7 @@ services:
       - "traefik.http.routers.netdata-secure.tls.certresolver=http"
       - "traefik.http.routers.netdata-secure.service=netdata"
       - "traefik.http.services.netdata.loadbalancer.server.port=19999"
-      - "traefik.docker.network=frontend"
+      - "traefik.docker.network=traefik_network"
     volumes:
       - netdataconfig:/etc/netdata
       - netdatalib:/var/lib/netdata

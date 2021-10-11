@@ -32,7 +32,7 @@ services:
             # tell traefik where our container internal port is
             - "traefik.http.services.sveltekit.loadbalancer.server.port=3000" 
             # tell traefik what network we are using
-            - "traefik.docker.network=frontend"
+            - "traefik.docker.network=traefik_network"
 networks:
   traefik_network:
     external: true
