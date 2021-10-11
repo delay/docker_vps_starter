@@ -18,7 +18,7 @@
 1. Copy sample.env to .env file and then update this file with your own settings.
 
 ## [Directus with Postgres Database](https://directus.io)
-### Directus creates an app & API for your SQL database. Also included a [postgres backup script](https://github.com/heyman/postgresql-backup) that backs up the database daily to an Amazon S3 bucket.
+### Directus creates an app & API for your SQL database. Also included a [postgres backup container](https://github.com/heyman/postgresql-backup) that backs up the database daily to an Amazon S3 bucket.
 1. Copy sample.env to .env file and then update this file with your own settings.
 
 ## [Sveltekit](https://kit.svelte.dev)
