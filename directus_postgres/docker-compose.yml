@@ -11,7 +11,24 @@ services:
       POSTGRES_USER: 'directus'
       POSTGRES_PASSWORD: '${PASSWORD}'
       POSTGRES_DB: 'directus'
-
+  # https://github.com/heyman/postgresql-backup    
+  postgres_backup:
+    container_name: postgres_backup
+    build: ./postgres_backup
+    networks:
+      - internal_network
+    environment:
+      CRON_SCHEDULE: '15 3 * * *' # every day at 3:15am
+      DB_HOST: 'database'
+      DB_PASS: '${PASSWORD}'
+      DB_USER: 'directus'
+      DB_NAME: 'directus'
+      S3_PATH: '${S3_PATH}'
+      AWS_ACCESS_KEY_ID: '${AWS_ACCESS_KEY_ID}'
+      AWS_SECRET_ACCESS_KEY: '${AWS_SECRET_ACCESS_KEY}'
+      AWS_DEFAULT_REGION: '${AWS_DEFAULT_REGION}'
+      MAIL_T0: '${MAIL_TO}'
+      MAIL_FROM: '${MAIL_FROM}'
   cache:
     container_name: cache_directus_${DOCKER_IMAGE_PREFIX}
     image: redis:6
