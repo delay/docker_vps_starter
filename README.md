@@ -21,6 +21,7 @@
 ## [Directus with Postgres Database](https://directus.io)
 ### Directus creates an app & API for your SQL database. Also included a [postgres backup container](https://github.com/heyman/postgresql-backup) that backs up the database daily to an Amazon S3 bucket.
 1. Copy sample.env to .env file and then update this file with your own settings.
+2. The S3 postgres backup container keeps the most recent 7 days of backups.  You can add an environmental variable to change it. KEEP_BACKUP_DAYS: 7
 
 ## [Sveltekit](https://kit.svelte.dev)
 ### SvelteKit is a framework for building web applications of all sizes.
