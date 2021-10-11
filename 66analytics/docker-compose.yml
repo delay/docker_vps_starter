@@ -6,7 +6,7 @@ services:
       args:
        PHP_VERSION: ${PHP_VERSION}
     networks:
-      - backend
+      - internal_network
     volumes:
       - ${PROJECT_ROOT}:/var/www/html/
     environment:
@@ -27,8 +27,8 @@ services:
       - php
       - db
     networks:
-      - frontend
-      - backend
+      - traefik_network
+      - internal_network
     ports:
       - "${EXTERNAL_APACHE_PORT}:80"
     labels:
@@ -43,7 +43,7 @@ services:
       - "traefik.http.routers.apache-secure.tls.certresolver=http"
       - "traefik.http.routers.apache-secure.service=apache"
       - "traefik.http.services.apache.loadbalancer.server.port=80"
-      - "traefik.docker.network=frontend"
+      - "traefik.docker.network=traefik_network"
     volumes:
       - ${PROJECT_ROOT}:/var/www/html/
     container_name: ${DOCKER_IMAGE_PREFIX}_apache
@@ -58,7 +58,7 @@ services:
     volumes:
             - ./mariadb/data/:/var/lib/mysql
     networks:
-      - backend
+      - internal_network
     environment:
       TZ: "${TZ}"
       MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
@@ -67,10 +67,10 @@ services:
       MYSQL_PASSWORD: "${DB_PASSWORD}"
     container_name: ${DOCKER_IMAGE_PREFIX}_mysql
 networks:
-  frontend:
-    name: frontend
-  backend:
-    name: backend
+  traefik_network:
+    name: traefik_network
+  internal_network:
+    name: internal_network
 
 volumes:
     data:
