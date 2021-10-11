@@ -6,6 +6,7 @@ services:
         build: ./app
         ports: 
             - "${PORT}:3000"
+        restart: always 
         networks:
             - traefik_network
         labels:
