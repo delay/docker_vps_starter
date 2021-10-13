@@ -2,10 +2,6 @@ cd traefik
 docker-compose down
 cd ..
 echo "stopped traefik"
-cd 66analytics 
-docker-compose down
-cd ..
-echo "stopped 66analytics"
 cd netdata 
 docker-compose down
 cd ..

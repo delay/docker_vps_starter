@@ -6,9 +6,6 @@ echo "started directus with postgres"
 docker-compose --env-file ./traefik/.env -f traefik/docker-compose.yml build
 docker-compose --env-file ./traefik/.env -f traefik/docker-compose.yml up -d
 echo "started traefik"
-docker-compose --env-file ./66analytics/.env -f 66analytics/docker-compose.yml build
-docker-compose --env-file ./66analytics/.env -f 66analytics/docker-compose.yml up -d
-echo "started 66analytics"
 docker-compose --env-file ./netdata/.env -f netdata/docker-compose.yml build
 docker-compose --env-file ./netdata/.env -f netdata/docker-compose.yml up -d
 echo "started netdata"

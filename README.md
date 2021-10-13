@@ -37,12 +37,7 @@
 3. There are some settings for a relay host for the smtp server.  You can remove these if you want to use the local smtp server. You can use a relay service and fill in those fields for a simpler configuration.  There are many third party mail senders (Mailgun, Sendgrid, AWS etc).  
 
 ## [Posthog](https://posthog.com)
-### Open source product analytics, PostHog keeps you in control of customer data. Works with your event pipelines and data warehouse. This is for complex analytics analysis.
+### Open source product analytics. Works with your event pipelines and data warehouse. This is for complex analytics analysis.  It has heat maps, session replays, funnel tracking etc.  
 1. Copy sample.env to .env file and then update this file with your own settings.
  
- ## [66analytics](https://66analytics.com)
-### Web analytics made easy. Self-hosted, friendly, all-in-one web analytics tool. Lightweight tracking, session replays, heatmaps, user journeys & more.
-1. This is the only container that will not work without purchasing something.  I like this analytics app because it has heatmaps and records user sessions which can help with debugging.  At the time I wrote this, it was $79.  It is similar to analytics like [fullstory](https://www.fullstory.com), [luckyorange](https://www.luckyorange.com) and [hotjar](https://www.hotjar.com) but it's self hosted.  If you don't need heatmaps and user session recording, plausible listed above has similar features.
-2. You need to buy the script and place it in the /66analytics/66analytics folder.
-3. Copy sample.env to .env file and then update this file with your own settings.
 
