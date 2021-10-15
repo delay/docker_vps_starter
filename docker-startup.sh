@@ -18,3 +18,6 @@ echo "started plausible"
 docker-compose --env-file ./sveltekit/.env -f sveltekit/docker-compose.yml build
 docker-compose --env-file ./sveltekit/.env -f sveltekit/docker-compose.yml up --build -d
 echo "started sveltekit"
+docker-compose --env-file ./sveltekit_postgres/.env -f sveltekit_postgres/docker-compose.yml build
+docker-compose --env-file ./sveltekit_postgres/.env -f sveltekit/docker-compose.yml up --build -d
+echo "started sveltekit with postgres"

@@ -22,4 +22,8 @@ cd sveltekit
 docker-compose down
 cd ..
 echo "stopped sveltekit"
+cd sveltekit_postgres
+docker-compose down
+cd ..
+echo "stopped sveltekit_postgres"
 docker network rm traefik_network
