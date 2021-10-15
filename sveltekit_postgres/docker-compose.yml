@@ -70,5 +70,6 @@ services:
 volumes:
     postgres-data:
 networks:
-  traefik_network:
-    external: true
+    internal_network:
+    traefik_network:
+        external: true
